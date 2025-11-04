@@ -34,9 +34,9 @@ It uses **Playwright + aiohttp + BeautifulSoup** to simulate real browser behavi
 
 ---
 
-## ⚙️ Setup
+## Setup
 
-### 1️⃣ Install dependencies & chromium
+### Install dependencies & chromium
 
 ```bash
 pip install -r requirements.txt
@@ -46,13 +46,13 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 2️⃣ Run locally
+### Run locally
 
 ```bash
 apify run
 ```
 
-### 3️⃣ Deploy to Apify platform
+### Deploy to Apify platform
 
 ```bash
 apify push
@@ -62,7 +62,7 @@ Apify will build your Docker image automatically using the included `Dockerfile`
 
 ---
 
-## 🐳 Dockerfile (pre-installed Chromium)
+## Dockerfile (pre-installed Chromium)
 
 The container uses `apify/actor-python:3.13` as the base image and installs Chromium with:
 
@@ -74,7 +74,7 @@ This ensures browser-based authentication works inside the container.
 
 ---
 
-## 🧠 Input Configuration
+## Input Configuration
 
 You can pass inputs via `INPUT.json` or directly through Apify UI.
 
@@ -92,7 +92,7 @@ Example:
 
 ---
 
-## 📤 Output Format
+## Output Format
 
 Each scraped post is stored in the Apify dataset with this structure:
 
@@ -115,7 +115,7 @@ Each scraped post is stored in the Apify dataset with this structure:
 
 ---
 
-## 🧠 AI / Research Use Case
+## AI / Research Use Case
 
 The output is ideal for **training or analyzing lifestyle-related UGC trends**:
 
@@ -125,7 +125,7 @@ The output is ideal for **training or analyzing lifestyle-related UGC trends**:
 
 ---
 
-## ⚠️ Notes
+## Notes
 
 - Some image URLs may be **403 Forbidden** due to Weibo CDN restrictions — they’re preserved only for metadata.
 - Text content may occasionally be truncated if long-form text is behind a login wall.
