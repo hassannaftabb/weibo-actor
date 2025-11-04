@@ -3,7 +3,7 @@ FROM apify/actor-python:3.13
 USER root
 
 RUN echo "Installing Playwright Chromium..." \
-    && npx playwright install --with-deps chromium \
+    && playwright install --with-deps chromium \
     && echo "Chromium installation complete."
 
 USER myuser
