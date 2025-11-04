@@ -1,16 +1,17 @@
-FROM apify/actor-python:3.13
+FROM apify/actor-python-playwright:3.13
 
-USER root
+USER myuser
 
 COPY --chown=myuser:myuser requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-RUN echo "Installing Playwright Chromium..." \
-    && playwright install --with-deps chromium \
-    && echo "Chromium installation complete."
-
-USER myuser
+RUN echo "Python version:" \
+    && python --version \
+    && echo "Pip version:" \
+    && pip --version \
+    && echo "Installing dependencies:" \
+    && pip install --no-cache-dir -r requirements.txt \
+    && echo "All installed Python packages:" \
+    && pip freeze
 
 COPY --chown=myuser:myuser . ./
 
