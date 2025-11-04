@@ -1,0 +1,35 @@
+{
+  "title": "Weibo Lifestyle UGC Scraper Input",
+  "description": "Input parameters for scraping lifestyle-related user-generated content (UGC) posts from Weibo.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Search Keywords",
+      "type": "array",
+      "description": "List of lifestyle-related keywords to scrape from Weibo (e.g., 护肤, 健身, 旅行, 穿搭, 美食).",
+      "editor": "stringList",
+      "prefill": ["护肤", "健身", "旅行", "穿搭", "美食"]
+    },
+    "max_pages": {
+      "title": "Max Pages per Keyword",
+      "type": "integer",
+      "description": "Maximum number of Weibo search result pages to scrape per keyword (1–10).",
+      "editor": "number",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 10
+    },
+    "concurrency": {
+      "title": "Concurrency Level",
+      "type": "integer",
+      "description": "Number of concurrent requests for scraping posts (1–20).",
+      "editor": "number",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 20
+    }
+  },
+  "required": ["keywords"],
+  "additionalProperties": false
+}
