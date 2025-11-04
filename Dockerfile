@@ -2,14 +2,15 @@ FROM apify/actor-python:3.13
 
 USER root
 
+COPY --chown=myuser:myuser requirements.txt ./
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 RUN echo "Installing Playwright Chromium..." \
     && playwright install --with-deps chromium \
     && echo "Chromium installation complete."
 
 USER myuser
-
-COPY --chown=myuser:myuser requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
 
 COPY --chown=myuser:myuser . ./
 
